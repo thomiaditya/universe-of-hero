@@ -55,7 +55,16 @@
       transform: translate(-50%, 0);
       font-size: 20px;
       position: absolute;
+      font-weight: bold;
       z-index: 2;
+      -webkit-user-select: none;
+      /* Safari */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* IE10+/Edge */
+      user-select: none;
+      /* Standard */
     }
 
     .constr h1 {
@@ -63,10 +72,18 @@
       text-transform: uppercase;
       line-height: 1;
       transition: all ease-out 500ms;
+      -webkit-user-select: none;
+      /* Safari */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* IE10+/Edge */
+      user-select: none;
+      /* Standard */
     }
 
     .constr h1:hover {
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
 
   </style>
