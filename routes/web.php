@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('under-construction');
+if (env('USER_CONSTRUCTION')) {
+    Route::get('/', function () {
+        return view('under-construction');
+    });
+}
+
+Route::group(['prefix' => '/'], function () {
+    //
 });

@@ -1,0 +1,16 @@
+// Place all scss files below.
+@import "home";
+
+// This is the default configuration that will apply to all application. Do not change this just override if needed.
+@import "variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
