@@ -11,6 +11,9 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.js("resources/js/*.js", "public/js");
+// Change the public path.
+mix.setPublicPath("public_html/");
 
-mix.sass("resources/sass/app.scss", "public/css");
+// Set all the paths.
+mix.js("resources/js/app.js", "public_html/js");
+mix.sass("resources/sass/app.scss", "public_html/css");
