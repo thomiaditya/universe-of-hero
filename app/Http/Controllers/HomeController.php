@@ -17,7 +17,7 @@ class HomeController extends Controller
             return view('redirect.maintenance');
         }
 
-        return view('home');
+        // return view('home');
     }
 
     /**
