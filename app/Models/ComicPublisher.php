@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ComicPublisher extends Model
 {
     use HasFactory;
+
+    /**
+     * Use guarded to prevent mass assignment
+     * 
+     * @var array<int, string>
+     */
+    protected $guarded = [];
 }

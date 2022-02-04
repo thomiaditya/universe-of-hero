@@ -27,23 +27,33 @@ class Comic extends Model
     }
 
     /**
-     * Get history of this comic
+     * Get histories from historyable model (Comic) to this comic
      * 
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function histories()
     {
-        return $this->hasMany(History::class);
+        return $this->morphMany(History::class, 'historyable');
     }
 
     /**
-     * Get the comments of this comic
+     * Get comment from commentable of this comic
      * 
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
+    /**
+     * Get votes from votable of this comic
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function votes()
+    {
+        return $this->morphMany(Vote::class, 'votable');
     }
 
     /**
@@ -54,5 +64,25 @@ class Comic extends Model
     public function publisher()
     {
         return $this->belongsTo(ComicPublisher::class);
+    }
+
+    /**
+     * Get the comic authors of this comic
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function authors()
+    {
+        return $this->belongsToMany(ComicAuthor::class, 'comic_author_comic');
+    }
+
+    /**
+     * The comic genres of this comic
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function genres()
+    {
+        return $this->belongsToMany(ComicGenre::class, 'comic_genre');
     }
 }
