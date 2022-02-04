@@ -4,6 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * 
+ * Server Log
+ * 
+ * id
+ * log_type -> enum('error', 'warning', 'info', 'debug')
+ * message
+ * 
+ */
 class CreateServerLogsTable extends Migration
 {
     /**
@@ -15,6 +24,8 @@ class CreateServerLogsTable extends Migration
     {
         Schema::create('server_logs', function (Blueprint $table) {
             $table->id();
+            $table->enum('log_type', ['error', 'warning', 'info', 'debug']);
+            $table->string('message');
             $table->timestamps();
         });
     }

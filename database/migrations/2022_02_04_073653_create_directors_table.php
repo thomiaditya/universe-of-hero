@@ -4,6 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * 
+ * Director
+ * 
+ * id
+ * name
+ * biography_url
+ * 
+ */
 class CreateDirectorsTable extends Migration
 {
     /**
@@ -15,6 +24,8 @@ class CreateDirectorsTable extends Migration
     {
         Schema::create('directors', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('biography_url');
             $table->timestamps();
         });
     }

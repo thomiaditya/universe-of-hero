@@ -4,6 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * 
+ * Comic Genre
+ * 
+ * id
+ * genre_id -> foreign key to genres and also the primary key
+ * comic_id -> foreign key to comics and also the primary key
+ * 
+ */
 class CreateComicGenresTable extends Migration
 {
     /**
@@ -15,7 +24,12 @@ class CreateComicGenresTable extends Migration
     {
         Schema::create('comic_genres', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('genre_id');
+            $table->unsignedBigInteger('comic_id');
             $table->timestamps();
+
+            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreign('comic_id')->references('id')->on('comics');
         });
     }
 

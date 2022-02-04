@@ -4,6 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * 
+ * Payment Method Table
+ * 
+ * id
+ * payment_method_name
+ * 
+ */
 class CreatePaymentMethodsTable extends Migration
 {
     /**
@@ -15,6 +23,7 @@ class CreatePaymentMethodsTable extends Migration
     {
         Schema::create('payment_methods', function (Blueprint $table) {
             $table->id();
+            $table->string('payment_method_name');
             $table->timestamps();
         });
     }

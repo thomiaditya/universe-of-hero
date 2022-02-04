@@ -4,6 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * 
+ * History
+ * 
+ * id
+ * user_id -> foreign key to users
+ * historyable -> polymorphic relation
+ * details
+ * 
+ */
 class CreateHistoriesTable extends Migration
 {
     /**
@@ -15,7 +25,12 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->morphs('historyable');
+            $table->string('details');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
