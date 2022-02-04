@@ -15,4 +15,24 @@ class Genre extends Model
      * @var array<int, string>
      */
     protected $guarded = [];
+
+    /**
+     * Movie can have many genres
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function movies()
+    {
+        return $this->belongsToMany(Movie::class, 'movie_genre');
+    }
+
+    /**
+     * Comic can have many genres
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function comics()
+    {
+        return $this->belongsToMany(Comic::class, 'comic_genre');
+    }
 }

@@ -15,4 +15,14 @@ class Director extends Model
      * @var array<int, string>
      */
     protected $guarded = [];
+
+    /**
+     * Director can have many movies
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
+    public function movies()
+    {
+        return $this->hasMany(Movie::class);
+    }
 }

@@ -15,4 +15,14 @@ class ComicPublisher extends Model
      * @var array<int, string>
      */
     protected $guarded = [];
+
+    /**
+     * Get comics that this publisher has published
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
+    public function comics()
+    {
+        return $this->hasMany(Comic::class);
+    }
 }

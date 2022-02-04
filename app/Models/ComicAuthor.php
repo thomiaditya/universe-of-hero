@@ -15,4 +15,14 @@ class ComicAuthor extends Model
      * @var array<int, string>
      */
     protected $guarded = [];
+
+    /**
+     * Get comics associated with this author
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function comics()
+    {
+        return $this->belongsToMany(Comic::class, 'comic_author_comic');
+    }
 }

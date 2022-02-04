@@ -14,4 +14,14 @@ class PaymentMethod extends Model
      * @var array<int, string>
      */
     protected $guarded = [];
+
+    /**
+     * Payment method can have many donation logs
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
+    public function donationLogs()
+    {
+        return $this->hasMany(DonationLog::class);
+    }
 }
