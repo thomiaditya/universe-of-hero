@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Schema;
  * type -> enum (report, suggestion, bug)
  * 
  */
-class CreateFeedbackTable extends Migration
+class CreateFeedbacksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -23,7 +23,7 @@ class CreateFeedbackTable extends Migration
      */
     public function up()
     {
-        Schema::create('feedback', function (Blueprint $table) {
+        Schema::create('feedbacks', function (Blueprint $table) {
             $table->id();
 
             $table->unsignedBigInteger('user_id');
@@ -42,6 +42,6 @@ class CreateFeedbackTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('feedback');
+        Schema::dropIfExists('feedbacks');
     }
 }

@@ -28,6 +28,8 @@ class CreateCommentsTable extends Migration
             $table->morphs('commentable');
             $table->text('comment');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
