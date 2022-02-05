@@ -29,6 +29,7 @@ class CreateHistoriesTable extends Migration
             $table->morphs('historyable');
             $table->string('details');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users');
         });

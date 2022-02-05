@@ -46,6 +46,7 @@ class CreateComicsTable extends Migration
             $table->integer('shares')->default(0);
             $table->integer('total_issues')->default(0);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('comic_publisher_id')->references('id')->on('comic_publishers');
         });

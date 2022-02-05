@@ -27,6 +27,7 @@ class CreateDirectorsTable extends Migration
             $table->string('name');
             $table->string('biography_url');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

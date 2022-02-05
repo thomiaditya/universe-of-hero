@@ -13,11 +13,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (config('server.maintenance')) {
-            return view('redirect.maintenance');
-        }
-
-        return view('home');
+        // return json
+        return response()->json([
+            'message' => 'Welcome to the Laravel API',
+            'status' => '200'
+        ], 200);
     }
 
     /**

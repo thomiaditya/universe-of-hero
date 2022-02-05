@@ -27,6 +27,7 @@ class CreateMovieGenresTable extends Migration
             $table->unsignedBigInteger('movie_id');
             $table->unsignedBigInteger('genre_id');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('movie_id')->references('id')->on('movies');
             $table->foreign('genre_id')->references('id')->on('genres');

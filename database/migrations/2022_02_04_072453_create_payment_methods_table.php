@@ -25,6 +25,7 @@ class CreatePaymentMethodsTable extends Migration
             $table->id();
             $table->string('payment_method_name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

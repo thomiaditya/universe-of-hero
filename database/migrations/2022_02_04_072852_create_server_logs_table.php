@@ -27,6 +27,7 @@ class CreateServerLogsTable extends Migration
             $table->enum('log_type', ['error', 'warning', 'info', 'debug']);
             $table->string('message');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

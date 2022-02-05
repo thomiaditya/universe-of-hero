@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MovieProducer extends Model
 {
-    use HasFactory;
+    use Hasfactory, SoftDeletes;
 
     /**
      * Use guarded to prevent mass assignment

@@ -29,6 +29,7 @@ class CreateVotesTable extends Migration
             $table->morphs('votable');
             $table->float('rating');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users');
         });

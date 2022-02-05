@@ -29,6 +29,7 @@ class CreateComicAuthorComicTable extends Migration
             $table->unsignedBigInteger('comic_id');
             $table->enum('role', ['writer', 'penciler', 'inker', 'colorist', 'letterer', 'cover artist', 'editor', 'artist']);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('comic_author_id')->references('id')->on('comic_authors');
             $table->foreign('comic_id')->references('id')->on('comics');

@@ -31,6 +31,7 @@ class CreateDonationLogsTable extends Migration
             $table->integer('amount');
             $table->enum('payment_status', ['pending', 'paid', 'failed']);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('payment_method_id')->references('id')->on('payment_methods');

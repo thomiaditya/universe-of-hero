@@ -30,6 +30,7 @@ class CreateFeedbacksTable extends Migration
             $table->text('message');
             $table->enum('type', ['report', 'suggestion', 'bug']);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users');
         });

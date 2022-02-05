@@ -45,6 +45,7 @@ class CreateMoviesTable extends Migration
             $table->integer('likes')->default(0);
             $table->integer('shares')->default(0);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('director_id')->references('id')->on('directors');
             $table->foreign('movie_producer_id')->references('id')->on('movie_producers');
