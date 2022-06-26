@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => '/', 'as' => 'home.'], function () {
-    Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::group(['prefix' => '/', 'as' => 'web.'], function () {
+    Route::get('/', [\App\Http\Controllers\WebController::class, 'home'])->name('home');
+    Route::get('/comic', [\App\Http\Controllers\WebController::class, 'comic'])->name('comic');
+    Route::get('/about', [\App\Http\Controllers\WebController::class, 'about'])->name('about');
+    Route::get('/donate', [\App\Http\Controllers\WebController::class, 'donate'])->name('donate');
 });
